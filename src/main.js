@@ -23,7 +23,7 @@ btnCohorts.addEventListener ('click', (e) => {
  const usersPromise = fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json').then(promiseControl);
  const progressPromise = fetch('../data/cohorts/lim-2018-03-pre-core-pw/progress.json').then(promiseControl);
 
- getListCohorts = () => {
+ const getListCohorts = () => {
 
      cohortsPromise.then((jsonCohorts) => {
 
@@ -53,23 +53,23 @@ btnCohorts.addEventListener ('click', (e) => {
      });
  }
 
- showUsersByCohorts = (cohortName) => {
+ const showUsersByCohorts = (cohortName) => {
     cohortNameGlobal = cohortName;
     createCohortTable(cohortName, orderBy, orderDirection, search);
  }
 
- customOrderBy = () => {
+ const customOrderBy = () => {
     const orderBy = document.getElementById("selectOrderBy").value;
     const orderDirection = document.getElementById("selectOrderDirection").value;
     createCohortTable(cohortNameGlobal, orderBy, orderDirection, search);
  };
 
- findByName = () => {
+ const findByName = () => {
     const search = document.getElementById("txtSearch").value;    
     createCohortTable(cohortNameGlobal, orderBy, orderDirection, search);
  };
 
- createCohortTable = (cohortName, orderBy, orderDirection, search) => {
+ const createCohortTable = (cohortName, orderBy, orderDirection, search) => {
 
     let cohorts, users, progress = [];
     cohortsPromise.then((jsonCohorts) => {

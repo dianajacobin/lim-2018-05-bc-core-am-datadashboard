@@ -1,4 +1,6 @@
-
+.centrado{
+    height: 80px;
+}
 header { 
     border: 1px solid #CCC; 
     height: 80px;
